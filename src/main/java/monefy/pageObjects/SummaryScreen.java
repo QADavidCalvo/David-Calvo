@@ -1,5 +1,9 @@
 package monefy.pageObjects;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+
 import org.openqa.selenium.By;
 
 import monefy.constants.AndroidScreensConstants;
@@ -12,15 +16,15 @@ public class SummaryScreen extends DriverController {
   }
 
   public Double getTotalExpensesAmount() {
-    return Double.valueOf(driver.findElement(By.id(AndroidScreensConstants.SUMMARY_TOTALEXPENSES_AMOUNT_TEXT)).getText().replace("€", ""));
+    return parseAmount(driver.findElement(By.id(AndroidScreensConstants.SUMMARY_TOTALEXPENSES_AMOUNT_TEXT)).getText().replace("€", ""));
   }
 
   public Double getTotalIncomesAmount() {
-    return Double.valueOf(driver.findElement(By.id(AndroidScreensConstants.SUMMARY_TOTALINCOMES_AMOUNT_TEXT)).getText().replace("€", ""));
+    return parseAmount(driver.findElement(By.id(AndroidScreensConstants.SUMMARY_TOTALINCOMES_AMOUNT_TEXT)).getText().replace("€", ""));
   }
 
   public Double getCurrentBalanceAmount() {
-    return Double.valueOf(driver.findElement(By.id(AndroidScreensConstants.SUMMARY_CURRENTBALANCE_AMOUNT_TEXT)).getText().replace("Balance €", ""));
+    return parseAmount(driver.findElement(By.id(AndroidScreensConstants.SUMMARY_CURRENTBALANCE_AMOUNT_TEXT)).getText().replace("Balance €", ""));
   }
 
   public void goToBalanceDetailsScreen() {
@@ -33,6 +37,14 @@ public class SummaryScreen extends DriverController {
 
   public void pressAddIncomesButton() {
     driver.findElement(By.id(AndroidScreensConstants.ADD_INCOMES_BUTTON)).click();
+  }
+
+  private Double parseAmount(String value) {
+    try {
+      return NumberFormat.getInstance(Locale.ENGLISH).parse(value).doubleValue();
+    } catch (ParseException e) {
+      return null;
+    }
   }
 
 }

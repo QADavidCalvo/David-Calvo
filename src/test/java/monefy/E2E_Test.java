@@ -42,10 +42,10 @@ public class E2E_Test {
 
     // When
     summaryScreen.pressAddExpensesButton();
-    expensesAndIncomesScreen.selectAccount("Payment card");
+    expensesAndIncomesScreen.addNote("Alquiler del piso");
+    expensesAndIncomesScreen.selectAccount("Tarjeta de pago");
     expensesAndIncomesScreen.setAmount("750");
-    expensesAndIncomesScreen.addNote("Flat renting");
-    expensesAndIncomesScreen.chooseCategory("House");
+    expensesAndIncomesScreen.chooseCategory("Casa");
 
     // Then
     assertTrue(Double.compare(summaryScreen.getTotalExpensesAmount(), 0.00) > currentExpensesAmount);
@@ -58,10 +58,10 @@ public class E2E_Test {
 
     // When
     summaryScreen.pressAddIncomesButton();
-    expensesAndIncomesScreen.selectAccount("Cash");
+    expensesAndIncomesScreen.addNote("Dinero para las vacaciones");
+    expensesAndIncomesScreen.selectAccount("Efectivo");
     expensesAndIncomesScreen.setAmount("50");
-    expensesAndIncomesScreen.addNote("monefy for summer holidays");
-    expensesAndIncomesScreen.chooseCategory("Savings");
+    expensesAndIncomesScreen.chooseCategory("Ahorros");
 
     // Then
     assertTrue(Double.compare(summaryScreen.getTotalIncomesAmount(), 0.00) > currentIncomesAmount);
@@ -73,9 +73,9 @@ public class E2E_Test {
     toolbar.pressNewTransferButton();
 
     // When
-    newTransferScreen.selectToAccount("Cash");
-    newTransferScreen.selectFromAccount("Payment card");
-    newTransferScreen.addNote("To buy food");
+    newTransferScreen.addNote("Compra de comida");
+    newTransferScreen.selectFromAccount("Tarjeta de pago");
+    newTransferScreen.selectToAccount("Efectivo");
     newTransferScreen.setAmount("20");
     newTransferScreen.addTransfer();
 

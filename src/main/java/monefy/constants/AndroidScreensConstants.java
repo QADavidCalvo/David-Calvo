@@ -35,6 +35,7 @@ public class AndroidScreensConstants {
   public static final String TRANSFER_ACCOUNTFROM_SELECTOR = "spinnerAccountFrom";
   public static final String TRANSFER_ACCOUNTTO_SELECTOR = "spinnerAccountTo";
   public static final String TRANSFER_ACCOUNTS_OPTIONS = "//android.widget.ListView//*[contains(@resource-id,'title')]";
+  public static final String TRANSFER_SHOWKEYBOARD_BUTTON = "show_keyboard_fab";
 
   // Amounts keyboard
   public static final String KEYBOARD_KEY_BUTTON = "buttonKeyboard";

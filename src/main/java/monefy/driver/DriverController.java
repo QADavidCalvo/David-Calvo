@@ -5,7 +5,9 @@ import static io.appium.java_client.remote.AndroidMobileCapabilityType.APP_PACKA
 import static io.appium.java_client.remote.AndroidMobileCapabilityType.DEVICE_READY_TIMEOUT;
 import static io.appium.java_client.remote.MobileCapabilityType.AUTOMATION_NAME;
 import static io.appium.java_client.remote.MobileCapabilityType.DEVICE_NAME;
+import static io.appium.java_client.remote.MobileCapabilityType.FULL_RESET;
 import static io.appium.java_client.remote.MobileCapabilityType.NEW_COMMAND_TIMEOUT;
+import static io.appium.java_client.remote.MobileCapabilityType.NO_RESET;
 import static org.openqa.selenium.remote.CapabilityType.PLATFORM_NAME;
 
 import java.net.URL;
@@ -41,6 +43,8 @@ public class DriverController {
     androidCapabilities.setCapability(DEVICE_NAME, "testDevice");
     androidCapabilities.setCapability(APP_PACKAGE, "com.monefy.app.lite");
     androidCapabilities.setCapability(APP_ACTIVITY, "com.monefy.activities.main.MainActivity_");
+    androidCapabilities.setCapability(FULL_RESET, false);
+    androidCapabilities.setCapability(NO_RESET, true);
     androidCapabilities.setCapability(DEVICE_READY_TIMEOUT, 3);
     androidCapabilities.setCapability(NEW_COMMAND_TIMEOUT, 300000);
     return androidCapabilities;
