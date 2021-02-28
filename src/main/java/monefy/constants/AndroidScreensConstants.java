@@ -7,7 +7,20 @@ public class AndroidScreensConstants {
   public static final String TOOLBAR_MENU_BUTTON = TOOLBAR_CONTAINER + "/android.widget.ImageButton";
   public static final String TOOLBAR_SEARCH_BUTTON = TOOLBAR_CONTAINER + "//*[contains(@resource-id,'menu_search')]";
   public static final String TOOLBAR_TRANSFER_BUTTON = TOOLBAR_CONTAINER + "//*[contains(@resource-id,'transfer_menu_item')]";
-  public static final String TOOLBAR_OPTIONS_BUTTON = TOOLBAR_CONTAINER + "//*[contains(@resource-id,'overflow')]";
+  public static final String TOOLBAR_CONFIGURATION_BUTTON = TOOLBAR_CONTAINER + "//*[contains(@resource-id,'overflow')]";
+
+  // Configuration screen
+  public static final String CONFIGURATION_CATEGORIES_BUTTON = "categories_panel";
+  public static final String CONFIGURATION_ACCOUNT_BUTTON = "accounts_panel";
+  public static final String CONFIGURATION_CURRENCIES_BUTTON = "currency_panel";
+  public static final String CONFIGURATION_SETTINGS_BUTTON = "settings_panel";
+
+  // Accounts screen
+  public static final String ACCOUNTS_CLOSE_BUTTON = "accounts_button";
+  public static final String ACCOUNTS_LIST = "//*[contains(@resource-id,'accounts_list')]";
+  public static final String ACCOUNTS_ADD_BUTTON = ACCOUNTS_LIST + "//*[contains(@resource-id,'AddCategory')]/..";
+  public static final String ACCOUNTS_NAME_TEXT = ACCOUNTS_LIST + "//*[contains(@resource-id,'Name')]";
+  public static final String ACCOUNTS_AMOUNT_TEXT = ACCOUNTS_LIST + "//*[contains(@resource-id,'Amount')]";
 
   // Summary screen
   public static final String SUMMARY_TOTALEXPENSES_AMOUNT_TEXT = "expense_amount_text";

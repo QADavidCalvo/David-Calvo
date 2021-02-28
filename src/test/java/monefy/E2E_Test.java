@@ -2,16 +2,24 @@ package monefy;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import monefy.driver.DriverController;
+import monefy.pageObjects.AccountsEditionScreen;
+import monefy.pageObjects.AccountsPanelScreen;
+import monefy.pageObjects.ConfigurationScreen;
 import monefy.pageObjects.CurrentBalanceScreen;
 import monefy.pageObjects.DrawerScreen;
 import monefy.pageObjects.ExpensesAndIncomesScreen;
 import monefy.pageObjects.NewTransferScreen;
-import monefy.pageObjects.OptionsScreen;
 import monefy.pageObjects.SummaryScreen;
 import monefy.pageObjects.ToolbarScreen;
 
@@ -27,13 +35,47 @@ public class E2E_Test {
     DriverController.stopDriver();
   }
 
-  ToolbarScreen toolbar = new ToolbarScreen();
   DrawerScreen drawer = new DrawerScreen();
-  OptionsScreen optionsScreen = new OptionsScreen();
+  ToolbarScreen toolbar = new ToolbarScreen();
+  ConfigurationScreen configurationScreen = new ConfigurationScreen();
+  AccountsPanelScreen accountsPanelScreen = new AccountsPanelScreen();
+  AccountsEditionScreen accountsEditionScreen = new AccountsEditionScreen();
   SummaryScreen summaryScreen = new SummaryScreen();
   CurrentBalanceScreen currentBalanceScreen = new CurrentBalanceScreen();
   ExpensesAndIncomesScreen expensesAndIncomesScreen = new ExpensesAndIncomesScreen();
   NewTransferScreen newTransferScreen = new NewTransferScreen();
+
+  private static Stream<Arguments> ACCOUNTS_DATA() {
+    return Arrays.stream(new Arguments[] {Arguments.of("Banco", "50000", "Bolsa")
+    });
+  }
+
+  @ParameterizedTest
+  @MethodSource("ACCOUNTS_DATA")
+  public void monefy_01_addNewAccount_isAccountAdded(String accountName, String accountBalance, String accountImage) {
+    // Given
+    toolbar.pressConfigurationButton();
+
+    // When
+    configurationScreen.pressAccountsButton();
+    accountsPanelScreen.pressAddAccountButton();
+    accountsEditionScreen.addAccountName(accountName);
+    accountsEditionScreen.addAccountBalance(accountBalance);
+    accountsEditionScreen.addAccountImage(accountImage);
+    accountsEditionScreen.saveAccountSettings();
+
+    // Then
+    accountsPanelScreen.isAccountWithBalance(accountName);
+  }
+
+  @ParameterizedTest
+  public void monefy_02_addBalanceToAccount_isBalanceAdded() {
+    // Given
+
+    // When
+
+    // Then
+  }
 
   @Test
   public void monefy_01_addNewExpense_isExpensesUpdatedInSummaryScreen() {

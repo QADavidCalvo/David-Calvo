@@ -19,8 +19,8 @@ public class ToolbarScreen extends DriverController {
     driver.findElement(By.xpath(AndroidScreensConstants.TOOLBAR_TRANSFER_BUTTON)).click();
   }
 
-  public void pressOptionsButton() {
-    driver.findElement(By.xpath(AndroidScreensConstants.TOOLBAR_OPTIONS_BUTTON)).click();
+  public void pressConfigurationButton() {
+    driver.findElement(By.xpath(AndroidScreensConstants.TOOLBAR_CONFIGURATION_BUTTON)).click();
   }
 
 }
