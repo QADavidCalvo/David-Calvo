@@ -18,7 +18,13 @@ public class AccountsPanelScreen extends DriverController {
   }
 
   public void pressAddAccountButton() {
-    driver.findElement(By.id(AndroidScreensConstants.ACCOUNTS_ADD_BUTTON)).click();
+    driver.findElement(By.xpath(AndroidScreensConstants.ACCOUNTS_ADD_BUTTON)).click();
+  }
+
+  public void editAccount(String name) {
+    List<MobileElement> currentAccounts = getAccountsName();
+    Integer index = getIndexOfAccountByName(currentAccounts, name);
+    if (index >= 0) currentAccounts.get(index).click();
   }
 
   public boolean isAccountWithName(String name) {
@@ -27,12 +33,14 @@ public class AccountsPanelScreen extends DriverController {
 
   public boolean isAccountWithBalance(String name) {
     try {
-      String accountBalanceText = getAccountsBalance().get(getIndexOfAccountByName(getAccountsName(), name)).getText().replaceAll("€", "");
-      Double accountBalanceValue = NumberFormat.getInstance(Locale.ENGLISH).parse(accountBalanceText).doubleValue();
-      return Double.compare(accountBalanceValue, Double.valueOf(0.0)) > 0;
-    } catch (ParseException e) {
-      return false;
-    }
+      Integer index = getIndexOfAccountByName(getAccountsName(), name);
+      if (index >= 0) {
+        String accountBalanceText = getAccountsBalance().get(index).getText().replaceAll("€", "");
+        Double accountBalanceValue = NumberFormat.getInstance(Locale.ENGLISH).parse(accountBalanceText).doubleValue();
+        return Double.compare(accountBalanceValue, Double.valueOf(0.0)) > 0;
+      }
+    } catch (ParseException e) {}
+    return false;
   }
 
   public void goToAccountWithName(String name) {

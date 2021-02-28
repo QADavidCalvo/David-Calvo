@@ -14,14 +14,35 @@ Please check the detailed information here: [Exploratory_Test.md](../main/src/te
 ### End-to-End automated tests
 
 #### Table of Contents
-- [Description](#description)
+- [Tests suite](#tests-suite)
+- [Techology description](#techology-description)
 - [Project structure](#project-structure)
 - [Installation](#installation)
 - [Running the tests](#running-the-tests)
 - [Test results](#test-results)
 
 
-##### Description
+##### Test suite
+
+Following the exploratory charters done I decided to automate the most critical actions done during the exploration.
+- Add new account (medium priority - minor severity)
+- Add balance to account (high priority - normal severity)
+- Add new expense (critical priority - bloquer severity)
+- Add new income (critical priority - bloquer severity)
+- Do new transfer (critical priority - critical severity)
+- Check balance details (high priority - normal severity)
+- Check current accounts balance (high priority - normal severity)
+
+Those scenarios are End to End tests but they are slow and hard to mantain so they are expensive.
+The ideal situation is to do those tests too:
+- Unit tests for each single action (must be the most ones implemented and they are very fast to execute)
+- Integration or API tests to check if the backend is receiving and storing the correct data from the client (should be the most as possible because they very fast and gets the most reliable information) 
+- UI tests to check the screen designs and texts (if they are automated, they help to check that the screen is showing as expected)
+- And do some exploratory tests to check that all the app is working fine (after each development and in each regression this kind of tests can find problems in the integration of all the pieces of the app)
+- As an extra, if the app stores info of each user, is good to do load tests (those test are very expensive but are very useful to check the integrity and the stability of the system especially when can be millions of users at the same time)  
+
+
+##### Techology description
 
 I have chosen to use Java for the end-to-end test code since it is an easy-to-understand language, and compatible both to automate Android, iOS or Web, executing the tests with Appium, an opensource framework which is fully usable in any test environment.
 
@@ -29,7 +50,7 @@ I haven't used SpringBoot since I didn't see it necessary to complicate the infr
 
 It is a maven project which easily manages the libraries and dependencies necessary to execute the tests both from the IDE and from the command line.
 
-All the tests run under Java 15 and jUnit 5 with which it is possible to make multiple configurations in the scenarios.
+All the tests run under Java 15 and jUnit 5 with which it's possible to launch the same scenario with different data provided.
 
 The tests results are generated with Maven Surefire Report and used to generate an Allure report with more usable info (in a big project this reports can have screenshots, logs, tests suite information, etc.)
 
@@ -55,6 +76,8 @@ The tests results are generated with Maven Surefire Report and used to generate 
 │   │   │   │   │   │   ├── OptionsScreen
 │   │   │   │   │   │   ├── SummaryScreen
 │   │   │   │   │   │   ├── ToolbarScreen
+│   │   │   │   │   ├── reports
+│   │   │   │   │   │   ├── AllureReport
 │   │   ├── test
 │   │   │   ├── java
 │   │   │   │   ├── monefy

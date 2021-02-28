@@ -11,12 +11,16 @@ public class AccountsEditionScreen extends DriverController {
     driver.findElement(By.id(AndroidScreensConstants.ACCOUNTS_ACCOUNT_NAME_FIELD)).setValue(accountName);
   }
 
-  public void addAccountBalance(String accountBalance) {
-    driver.findElement(By.id(AndroidScreensConstants.ACCOUNTS_ACCOUNT_BALANCE_FIELD)).setValue(accountBalance);
+  public void addAccountInitialBalance(String accountBalance) {
+    driver.findElement(By.id(AndroidScreensConstants.ACCOUNTS_ACCOUNT_INITIALBALANCE_FIELD)).setValue(accountBalance);
   }
 
-  public void addAccountImage(String accountImage) {
-    driver.findElement(By.id(AndroidScreensConstants.ACCOUNTS_ACCOUNT_IMAGE_FIELD)).setValue(accountImage);
+  public void addAccountImage(Integer accountImage) {
+    driver.findElements(By.xpath(AndroidScreensConstants.ACCOUNTS_ACCOUNT_CATEGORIES_CELLS)).get(accountImage - 1).click();
+  }
+
+  public void closeAccountSettings() {
+    driver.findElement(By.xpath(AndroidScreensConstants.ACCOUNTS_BACK_BUTTON)).click();
   }
 
   public void saveAccountSettings() {

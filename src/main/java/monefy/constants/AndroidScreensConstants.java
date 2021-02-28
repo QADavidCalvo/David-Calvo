@@ -21,6 +21,11 @@ public class AndroidScreensConstants {
   public static final String ACCOUNTS_ADD_BUTTON = ACCOUNTS_LIST + "//*[contains(@resource-id,'AddCategory')]/..";
   public static final String ACCOUNTS_NAME_TEXT = ACCOUNTS_LIST + "//*[contains(@resource-id,'Name')]";
   public static final String ACCOUNTS_AMOUNT_TEXT = ACCOUNTS_LIST + "//*[contains(@resource-id,'Amount')]";
+  public static final String ACCOUNTS_ACCOUNT_NAME_FIELD = "editTextCategoryName";
+  public static final String ACCOUNTS_ACCOUNT_INITIALBALANCE_FIELD = "initialAmount";
+  public static final String ACCOUNTS_ACCOUNT_CATEGORIES_CELLS = "//*[contains(@resource-id,'gridViewCategoryImages')]/android.widget.FrameLayout";
+  public static final String ACCOUNTS_SAVE_BUTTON = "save";
+  public static final String ACCOUNTS_BACK_BUTTON = "//*[contains(@resource-id,'toolbar')]/android.widget.ImageButton";
 
   // Summary screen
   public static final String SUMMARY_TOTALEXPENSES_AMOUNT_TEXT = "expense_amount_text";
