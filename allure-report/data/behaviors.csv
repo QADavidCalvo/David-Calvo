@@ -1,0 +1,8 @@
+"Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"","Accounts","EditAccount","0","0","2","0","0"
+"","Accounts","AccountsData","0","0","2","0","0"
+"","Transactions","TransactionsData","0","0","5","0","0"
+"","Spendings","SetExpenses","0","0","1","0","0"
+"","Spendings","SetIncomes","0","0","1","0","0"
+"","Spendings","SetTransfers","0","0","1","0","0"
+"","Accounts","CreateAccount","0","0","1","0","0"

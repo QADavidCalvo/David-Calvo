@@ -1,0 +1,178 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "monefy.E2E_Test",
+    "children" : [ {
+      "name" : "monefy_01_addNewAccount_isNewAccountSet",
+      "uid" : "5c0fed837e9a47dd",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593325050,
+        "stop" : 1614593347903,
+        "duration" : 22853
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_02_addBalanceToAccount_isAccountWithBalanceSet",
+      "uid" : "6fcf62ca1feddf54",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593367018,
+        "stop" : 1614593389625,
+        "duration" : 22607
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_02_addBalanceToAccount_isAccountWithBalanceSet",
+      "uid" : "d0254997a410b067",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593389739,
+        "stop" : 1614593404526,
+        "duration" : 14787
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_03_addNewExpense_isExpensesUpdatedInSpendingsScreen",
+      "uid" : "5dfe6c99b674a3dd",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593427624,
+        "stop" : 1614593442093,
+        "duration" : 14469
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_04_addNewIncome_isIncomesUpdatedInSpendingsScreen",
+      "uid" : "5fbf0d4013449a5",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593462769,
+        "stop" : 1614593476382,
+        "duration" : 13613
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_05_doNewTransfer_isTransfersUpdatedInSpendingsScreen",
+      "uid" : "355a4a474445ab8f",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593497376,
+        "stop" : 1614593509326,
+        "duration" : 11950
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_06_filterTransactionsByDate_isTransactionsDetailsDisplayed",
+      "uid" : "240e2742ecedecdf",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593533602,
+        "stop" : 1614593549778,
+        "duration" : 16176
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_06_filterTransactionsByDate_isTransactionsDetailsDisplayed",
+      "uid" : "9bd2ee9bee98425",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593549899,
+        "stop" : 1614593564217,
+        "duration" : 14318
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_07_filterSpendingsByDate_isCurrentBalanceGreaterThanZero",
+      "uid" : "ec92c348d5bcb7bf",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593603658,
+        "stop" : 1614593609908,
+        "duration" : 6250
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_07_filterSpendingsByDate_isCurrentBalanceGreaterThanZero",
+      "uid" : "e3599a2262a48f9e",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593610031,
+        "stop" : 1614593615887,
+        "duration" : 5856
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_07_filterSpendingsByDate_isCurrentBalanceGreaterThanZero",
+      "uid" : "44bf4e4e690915e2",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593615898,
+        "stop" : 1614593621673,
+        "duration" : 5775
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_08_goToAccountsPanel_isAccountWithTotalBalanceDisplayed",
+      "uid" : "ec0ef0f8439f9b7c",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593641959,
+        "stop" : 1614593652351,
+        "duration" : 10392
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "monefy_08_goToAccountsPanel_isAccountWithTotalBalanceDisplayed",
+      "uid" : "ab5657993d6c81bf",
+      "parentUid" : "c8fa30c97c4aa00b1e49ecf0a2cece81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614593652467,
+        "stop" : 1614593661425,
+        "duration" : 8958
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "monefy.E2E_Test"
+  } ]
+}

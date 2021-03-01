@@ -1,0 +1,210 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-3BJSC0U",
+    "children" : [ {
+      "name" : "12748@DESKTOP-3BJSC0U.main(1)",
+      "children" : [ {
+        "name" : "[1] Efectivo, 500",
+        "uid" : "6fcf62ca1feddf54",
+        "parentUid" : "8b292adc305341052f007a81ec53d9b4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593367018,
+          "stop" : 1614593389625,
+          "duration" : 22607
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "[2] Tarjeta de pago, 2000",
+        "uid" : "d0254997a410b067",
+        "parentUid" : "8b292adc305341052f007a81ec53d9b4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593389739,
+          "stop" : 1614593404526,
+          "duration" : 14787
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8b292adc305341052f007a81ec53d9b4"
+    }, {
+      "name" : "12492@DESKTOP-3BJSC0U.main(1)",
+      "children" : [ {
+        "name" : "[1] DAY",
+        "uid" : "ec92c348d5bcb7bf",
+        "parentUid" : "cc0c86b48e152d095fd2c855c543f2f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593603658,
+          "stop" : 1614593609908,
+          "duration" : 6250
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "[3] YEAR",
+        "uid" : "44bf4e4e690915e2",
+        "parentUid" : "cc0c86b48e152d095fd2c855c543f2f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593615898,
+          "stop" : 1614593621673,
+          "duration" : 5775
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "[2] MONTH",
+        "uid" : "e3599a2262a48f9e",
+        "parentUid" : "cc0c86b48e152d095fd2c855c543f2f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593610031,
+          "stop" : 1614593615887,
+          "duration" : 5856
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "cc0c86b48e152d095fd2c855c543f2f6"
+    }, {
+      "name" : "9272@DESKTOP-3BJSC0U.main(1)",
+      "children" : [ {
+        "name" : "[1] Compra de comida, Tarjeta de pago, Efectivo, 20",
+        "uid" : "355a4a474445ab8f",
+        "parentUid" : "1256ef04a3cbf9ffde75e1f5398f20e6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593497376,
+          "stop" : 1614593509326,
+          "duration" : 11950
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1256ef04a3cbf9ffde75e1f5398f20e6"
+    }, {
+      "name" : "15944@DESKTOP-3BJSC0U.main(1)",
+      "children" : [ {
+        "name" : "[1] Banco, 50000, 1",
+        "uid" : "5c0fed837e9a47dd",
+        "parentUid" : "12239bd4d6fa084e19ce8aa21af2a4e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593325050,
+          "stop" : 1614593347903,
+          "duration" : 22853
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "12239bd4d6fa084e19ce8aa21af2a4e7"
+    }, {
+      "name" : "13316@DESKTOP-3BJSC0U.main(1)",
+      "children" : [ {
+        "name" : "[2] Tarjeta de pago",
+        "uid" : "ab5657993d6c81bf",
+        "parentUid" : "a0876a4692bb52d7a46c317d390b62ca",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593652467,
+          "stop" : 1614593661425,
+          "duration" : 8958
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "[1] Efectivo",
+        "uid" : "ec0ef0f8439f9b7c",
+        "parentUid" : "a0876a4692bb52d7a46c317d390b62ca",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593641959,
+          "stop" : 1614593652351,
+          "duration" : 10392
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a0876a4692bb52d7a46c317d390b62ca"
+    }, {
+      "name" : "7380@DESKTOP-3BJSC0U.main(1)",
+      "children" : [ {
+        "name" : "[1] Vacaciones de verano, Efectivo, 50, Ahorros",
+        "uid" : "5fbf0d4013449a5",
+        "parentUid" : "e903389c951c07f44584e3569786758d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593462769,
+          "stop" : 1614593476382,
+          "duration" : 13613
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e903389c951c07f44584e3569786758d"
+    }, {
+      "name" : "664@DESKTOP-3BJSC0U.main(1)",
+      "children" : [ {
+        "name" : "[1] MONTH, DATE",
+        "uid" : "240e2742ecedecdf",
+        "parentUid" : "d48bf8243daf126f95942445294c42e0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593533602,
+          "stop" : 1614593549778,
+          "duration" : 16176
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "[2] MONTH, CATEGORY",
+        "uid" : "9bd2ee9bee98425",
+        "parentUid" : "d48bf8243daf126f95942445294c42e0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593549899,
+          "stop" : 1614593564217,
+          "duration" : 14318
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d48bf8243daf126f95942445294c42e0"
+    }, {
+      "name" : "9696@DESKTOP-3BJSC0U.main(1)",
+      "children" : [ {
+        "name" : "[1] Alquiler del piso, Tarjeta de pago, 750, Casa",
+        "uid" : "5dfe6c99b674a3dd",
+        "parentUid" : "45f0759fb797dd25fe84fe54c397d32c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614593427624,
+          "stop" : 1614593442093,
+          "duration" : 14469
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "45f0759fb797dd25fe84fe54c397d32c"
+    } ],
+    "uid" : "3938a7d75a6b036e34bde3e1e72d131b"
+  } ]
+}

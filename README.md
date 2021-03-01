@@ -54,6 +54,7 @@ It is a maven project which easily manages the libraries and dependencies necess
 All the tests run under Java 15 and jUnit 5 with which it's possible to launch the same scenario with different data provided.
 
 The tests results are generated with Maven Surefire Report, stored in the "allure-results" folder and used to generate an Allure report with more usable info (in a big project this reports can have screenshots, logs, tests suite information, etc.)
+This report is already generated with the real executions, you can download it from the "allure-report" folder and then open it using the command "allure open "{path_of_the_report_files}""
 
 
 ##### Project structure
@@ -84,6 +85,7 @@ The tests results are generated with Maven Surefire Report, stored in the "allur
 │   │   │   │   ├── monefy
 │   │   │   │   │   ├── E2E_Test
 │   ├── allure-results
+│   ├── allure-report
 ├── pom.xml
 └── README.md 
 ```

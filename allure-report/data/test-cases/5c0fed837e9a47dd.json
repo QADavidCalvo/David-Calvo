@@ -1,0 +1,66 @@
+{
+  "uid" : "5c0fed837e9a47dd",
+  "name" : "[1] Banco, 50000, 1",
+  "fullName" : "monefy.E2E_Test.monefy_01_addNewAccount_isNewAccountSet",
+  "historyId" : "176f6252a9001ffcc9b89793c73b0c5f",
+  "time" : {
+    "start" : 1614593325050,
+    "stop" : 1614593347903,
+    "duration" : 22853
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "CreateAccount"
+  }, {
+    "name" : "feature",
+    "value" : "Accounts"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-3BJSC0U"
+  }, {
+    "name" : "thread",
+    "value" : "15944@DESKTOP-3BJSC0U.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "monefy.E2E_Test"
+  }, {
+    "name" : "testClass",
+    "value" : "monefy.E2E_Test"
+  }, {
+    "name" : "testMethod",
+    "value" : "monefy_01_addNewAccount_isNewAccountSet"
+  }, {
+    "name" : "suite",
+    "value" : "monefy.E2E_Test"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5c0fed837e9a47dd.json",
+  "parameterValues" : [ ]
+}

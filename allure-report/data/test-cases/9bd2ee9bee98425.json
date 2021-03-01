@@ -1,0 +1,66 @@
+{
+  "uid" : "9bd2ee9bee98425",
+  "name" : "[2] MONTH, CATEGORY",
+  "fullName" : "monefy.E2E_Test.monefy_06_filterTransactionsByDate_isTransactionsDetailsDisplayed",
+  "historyId" : "921c0f2db049f3ac7045758c0bd0d8e1",
+  "time" : {
+    "start" : 1614593549899,
+    "stop" : 1614593564217,
+    "duration" : 14318
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "TransactionsData"
+  }, {
+    "name" : "feature",
+    "value" : "Transactions"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-3BJSC0U"
+  }, {
+    "name" : "thread",
+    "value" : "664@DESKTOP-3BJSC0U.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "monefy.E2E_Test"
+  }, {
+    "name" : "testClass",
+    "value" : "monefy.E2E_Test"
+  }, {
+    "name" : "testMethod",
+    "value" : "monefy_06_filterTransactionsByDate_isTransactionsDetailsDisplayed"
+  }, {
+    "name" : "suite",
+    "value" : "monefy.E2E_Test"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "9bd2ee9bee98425.json",
+  "parameterValues" : [ ]
+}

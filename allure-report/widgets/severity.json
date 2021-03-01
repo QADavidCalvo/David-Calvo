@@ -1,0 +1,131 @@
+[ {
+  "uid" : "6fcf62ca1feddf54",
+  "name" : "[1] Efectivo, 500",
+  "time" : {
+    "start" : 1614593367018,
+    "stop" : 1614593389625,
+    "duration" : 22607
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5fbf0d4013449a5",
+  "name" : "[1] Vacaciones de verano, Efectivo, 50, Ahorros",
+  "time" : {
+    "start" : 1614593462769,
+    "stop" : 1614593476382,
+    "duration" : 13613
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "5dfe6c99b674a3dd",
+  "name" : "[1] Alquiler del piso, Tarjeta de pago, 750, Casa",
+  "time" : {
+    "start" : 1614593427624,
+    "stop" : 1614593442093,
+    "duration" : 14469
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "355a4a474445ab8f",
+  "name" : "[1] Compra de comida, Tarjeta de pago, Efectivo, 20",
+  "time" : {
+    "start" : 1614593497376,
+    "stop" : 1614593509326,
+    "duration" : 11950
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5c0fed837e9a47dd",
+  "name" : "[1] Banco, 50000, 1",
+  "time" : {
+    "start" : 1614593325050,
+    "stop" : 1614593347903,
+    "duration" : 22853
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ec92c348d5bcb7bf",
+  "name" : "[1] DAY",
+  "time" : {
+    "start" : 1614593603658,
+    "stop" : 1614593609908,
+    "duration" : 6250
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9bd2ee9bee98425",
+  "name" : "[2] MONTH, CATEGORY",
+  "time" : {
+    "start" : 1614593549899,
+    "stop" : 1614593564217,
+    "duration" : 14318
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e3599a2262a48f9e",
+  "name" : "[2] MONTH",
+  "time" : {
+    "start" : 1614593610031,
+    "stop" : 1614593615887,
+    "duration" : 5856
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d0254997a410b067",
+  "name" : "[2] Tarjeta de pago, 2000",
+  "time" : {
+    "start" : 1614593389739,
+    "stop" : 1614593404526,
+    "duration" : 14787
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "240e2742ecedecdf",
+  "name" : "[1] MONTH, DATE",
+  "time" : {
+    "start" : 1614593533602,
+    "stop" : 1614593549778,
+    "duration" : 16176
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ab5657993d6c81bf",
+  "name" : "[2] Tarjeta de pago",
+  "time" : {
+    "start" : 1614593652467,
+    "stop" : 1614593661425,
+    "duration" : 8958
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "ec0ef0f8439f9b7c",
+  "name" : "[1] Efectivo",
+  "time" : {
+    "start" : 1614593641959,
+    "stop" : 1614593652351,
+    "duration" : 10392
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "44bf4e4e690915e2",
+  "name" : "[3] YEAR",
+  "time" : {
+    "start" : 1614593615898,
+    "stop" : 1614593621673,
+    "duration" : 5775
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
