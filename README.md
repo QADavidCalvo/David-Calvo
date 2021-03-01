@@ -6,7 +6,7 @@
 
 I decided to do an exploratory test of the Monefy app in a time frame of 1h doing some different exploratory charters and then reporting the results of that test.
 
-Please check the detailed information here: [Exploratory_Test.md](../main/src/test/java/monefy/Exploratory_Test.md)
+Please check the detailed information here: [Exploratory_Test.md](../master/src/test/java/monefy/Exploratory_Test.md)
 
 
 -------------------------------------------------------------------------------------------------

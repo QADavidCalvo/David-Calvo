@@ -29,6 +29,15 @@ import monefy.pageObjects.TransactionsDetailsScreen.TransactionsSorting;
 
 public class E2E_Test {
 
+  DateSettingsScreen dateSettingsScreen = new DateSettingsScreen();
+  ConfigurationScreen configurationScreen = new ConfigurationScreen();
+  AccountsPanelScreen accountsPanelScreen = new AccountsPanelScreen();
+  AccountsEditionScreen accountsEditionScreen = new AccountsEditionScreen();
+  SpendingsScreen spendingsScreen = new SpendingsScreen();
+  TransactionsDetailsScreen transactionsDetails = new TransactionsDetailsScreen();
+  ExpensesAndIncomesScreen expensesAndIncomesScreen = new ExpensesAndIncomesScreen();
+  NewTransferScreen newTransferScreen = new NewTransferScreen();
+
   @BeforeAll
   public static void setUp() {
     DriverController.initDriver();
@@ -38,15 +47,6 @@ public class E2E_Test {
   public static void tearDown() {
     DriverController.stopDriver();
   }
-
-  DateSettingsScreen dateSettingsScreen = new DateSettingsScreen();
-  ConfigurationScreen configurationScreen = new ConfigurationScreen();
-  AccountsPanelScreen accountsPanelScreen = new AccountsPanelScreen();
-  AccountsEditionScreen accountsEditionScreen = new AccountsEditionScreen();
-  SpendingsScreen spendingsScreen = new SpendingsScreen();
-  TransactionsDetailsScreen transactionsDetails = new TransactionsDetailsScreen();
-  ExpensesAndIncomesScreen expensesAndIncomesScreen = new ExpensesAndIncomesScreen();
-  NewTransferScreen newTransferScreen = new NewTransferScreen();
 
   @Severity(SeverityLevel.MINOR)
   @ParameterizedTest
