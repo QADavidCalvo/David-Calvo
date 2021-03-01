@@ -21,7 +21,7 @@
 - Out of scope: The tests are focused only in monthly spendings, so the other time interval spendings (daily, weekly, annual, etc.) are not checked.
 
 #### Test:
-- Tester: David Calvo Pérez
+- Tester: David Calvo PÃ©rez
 - Test date: 2021/02/27 10:00
 - Tests type: Time-framed exploratory test charters
 - Total duration: 1 hour
@@ -41,7 +41,7 @@
 #### Information:
 - Priority: High
 - Requirements: Add accounts, Edit accounts
-- Time-frame: 10m
+- Time-frame: 10 minutes
 
 #### Preconditions:
 - Have the accounts set by default
@@ -51,7 +51,7 @@
 - Add balance to all accounts
 
 #### Test notes:
-- Once the app is opened there are no information about the current accounts shown in the screen, so I needed to find the access to the desired section. I found it after tap on the three vertical buttons at the topbar and after tapp on the accounts option. Once I accessed to the account info I tapped on the + icon to access to a screen where I could add a new account, setting the name "Cuenta bancaria", the initial balance "50.000,00€, and an image for that account. I set to start with that balance since 2021/01/01. After that tapped on the add account button on the header and then the new account appeared in the accounts list with the current balance. Because there were two preconfigured accounts, I added "500€" as initial balance for the cash and "2000€" for the payment card, both starting the first day of this month. Then in the main screen I saw all those amounts added as a green value in the middle of the screen.
+- Once the app is opened there are no information about the current accounts shown in the screen, so I needed to find the access to the desired section. I found it after tap on the three vertical buttons at the topbar and after tapp on the accounts option. Once I accessed to the account info I tapped on the + icon to access to a screen where I could add a new account, setting the name "Cuenta bancaria", the initial balance "50.000,00â‚¬, and an image for that account. I set to start with that balance since 2021/01/01. After that tapped on the add account button on the header and then the new account appeared in the accounts list with the current balance. Because there were two preconfigured accounts, I added "500â‚¬" as initial balance for the cash and "2000â‚¬" for the payment card, both starting the first day of this month. Then in the main screen I saw all those amounts added as a green value in the middle of the screen.
 
 --------------------------------------------------------------------------
 
@@ -60,7 +60,7 @@
 #### Information:
 - Priority: Critical
 - Requirements: Dates selector, Expenses, Spendings summary
-- Time-frame: 10m
+- Time-frame: 10 minutes
 
 #### Preconditions:
 - Have no expenses previously set
@@ -80,7 +80,7 @@
 #### Information:
 - Priority: Critical
 - Requirements: Dates selector, Incomes, Spendings summary
-- Time-frame: 10m
+- Time-frame: 10 minutes
 
 #### Preconditions:
 - Have no incomes previously set
@@ -91,7 +91,7 @@
 - Check monthly incomes in the spendings summary
 
 #### Test notes:
-- By default there are no incomes added in the application. I started filtering the spendings by month, selecting all the accounts and the date from the left drawer that shows after tap on the inverted pyramid at the left of the topbar. Once the monthly spendings was shown, I tapped on the "+" green icon at the bottom-right of the screen and the new incomes screen was shown. Then I added a note "Sueldo", I selected the account "Payment card", I typped on the keyboard the number "1500" and then tapped on the action button of the keyboard to access a category selector, then I selected "Salario" and the income was added to the monthly spendings as an amount added to the overall incomes shown as a green text in the middle of the screen. No icons or percentages were shown for that income. After that I accessed again to the new income screen and I added 20€ of savings in cash and again that income was added to the overall in the monthly spendings. I saw that the balance amount at the bottom of the screen was updated.
+- By default there are no incomes added in the application. I started filtering the spendings by month, selecting all the accounts and the date from the left drawer that shows after tap on the inverted pyramid at the left of the topbar. Once the monthly spendings was shown, I tapped on the "+" green icon at the bottom-right of the screen and the new incomes screen was shown. Then I added a note "Sueldo", I selected the account "Payment card", I typped on the keyboard the number "1500" and then tapped on the action button of the keyboard to access a category selector, then I selected "Salario" and the income was added to the monthly spendings as an amount added to the overall incomes shown as a green text in the middle of the screen. No icons or percentages were shown for that income. After that I accessed again to the new income screen and I added 20â‚¬ of savings in cash and again that income was added to the overall in the monthly spendings. I saw that the balance amount at the bottom of the screen was updated.
 
 --------------------------------------------------------------------------
 
@@ -100,7 +100,7 @@
 #### Information:
 - Priority: Critical
 - Requirements: Dates selector, Transfers, Spendings summary
-- Time-frame: 10m
+- Time-frame: 10 minutes
 
 #### Preconditions:
 - Have no transfers previously set
@@ -120,7 +120,7 @@
 #### Information:
 - Priority: Medium
 - Requirements: Dates selector, Current balance details, Spendings summary
-- Time-frame: 10m
+- Time-frame: 10 minutes
 
 #### Preconditions:
 - Have expenses, incomes and transfers previously set
@@ -140,7 +140,7 @@
 #### Information:
 - Priority: High
 - Requirements: Dates selector, Accounts current balances, Spendings summary
-- Time-frame: 10m
+- Time-frame: 10 minutes
 
 #### Preconditions:
 - Have expenses, incomes and transfers previously set
