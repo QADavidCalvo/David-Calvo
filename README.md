@@ -153,13 +153,10 @@ To launch tests in your local machine do these steps:
 
 After run all the test cases with all the defined scenarios, I generated the Allure report to have the information of the results:
 
-![TestsResultsOverview](https://user-images.githubusercontent.com/17761949/109486526-4745e700-7a83-11eb-8185-d145c7e3c41b.jpg)
-
-![TestsResultsPackages](https://user-images.githubusercontent.com/17761949/109486527-4745e700-7a83-11eb-9eed-bd01176e8ed1.jpg)
-
-![TestsResultsGraphs](https://user-images.githubusercontent.com/17761949/109486524-46ad5080-7a83-11eb-8c7b-d7b8937c81d8.jpg)
-
-![TestsResultsBehaviours](https://user-images.githubusercontent.com/17761949/109486523-4614ba00-7a83-11eb-935f-f7d10bc317c2.jpg)
+<img src="https://user-images.githubusercontent.com/17761949/109486526-4745e700-7a83-11eb-8185-d145c7e3c41b.jpg" alt="Results overview" width="800">
+<img src="https://user-images.githubusercontent.com/17761949/109486527-4745e700-7a83-11eb-9eed-bd01176e8ed1.jpg" alt="Results packages" width="800">
+<img src="https://user-images.githubusercontent.com/17761949/109486524-46ad5080-7a83-11eb-8c7b-d7b8937c81d8.jpg" alt="Results graphs" width="800">
+<img src="https://user-images.githubusercontent.com/17761949/109486523-4614ba00-7a83-11eb-935f-f7d10bc317c2.jpg" alt="Results behaviours" width="800">
 
 Note: you can download this report from the "allure-report" folder and then open it using the command "allure open '{path_of_the_report_files}'"
 
