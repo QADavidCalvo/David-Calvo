@@ -13,8 +13,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import monefy.driver.DriverController;
 import monefy.pageObjects.AccountsEditionScreen;
 import monefy.pageObjects.AccountsPanelScreen;
@@ -48,7 +50,9 @@ public class E2E_Test {
     DriverController.stopDriver();
   }
 
-  @Severity(SeverityLevel.MINOR)
+  @Feature("Accounts")
+  @Story("CreateAccount")
+  @Severity(SeverityLevel.NORMAL)
   @ParameterizedTest
   @MethodSource("ADD_NEW_ACCOUNT")
   public void monefy_01_addNewAccount_isNewAccountSet(String accountName, String accountBalance, int accountImage) {
@@ -63,9 +67,12 @@ public class E2E_Test {
     accountsEditionScreen.saveAccountSettings();
 
     // Then
+    configurationScreen.goToAccountsList();
     assertTrue(accountsPanelScreen.isAccountWithName(accountName));
   }
 
+  @Feature("Accounts")
+  @Story("EditAccount")
   @Severity(SeverityLevel.NORMAL)
   @ParameterizedTest
   @MethodSource("ADD_ACCOUNT_BALANCE")
@@ -78,13 +85,13 @@ public class E2E_Test {
     accountsEditionScreen.addAccountInitialBalance(accountBalance);
     accountsEditionScreen.closeAccountSettings();
 
-    // And
-    configurationScreen.goToAccountsList();
-
     // Then
+    configurationScreen.goToAccountsList();
     assertTrue(accountsPanelScreen.isAccountWithBalance(accountName));
   }
 
+  @Feature("Spendings")
+  @Story("SetExpenses")
   @Severity(SeverityLevel.BLOCKER)
   @ParameterizedTest
   @MethodSource("EXPENSES_DATA")
@@ -103,6 +110,8 @@ public class E2E_Test {
     assertTrue(Double.compare(spendingsScreen.getTotalExpensesAmount(), initialExpensesAmount) > 0);
   }
 
+  @Feature("Spendings")
+  @Story("SetIncomes")
   @Severity(SeverityLevel.BLOCKER)
   @ParameterizedTest
   @MethodSource("INCOMES_DATA")
@@ -121,6 +130,8 @@ public class E2E_Test {
     assertTrue(Double.compare(spendingsScreen.getTotalIncomesAmount(), initialIncomesAmount) > 0);
   }
 
+  @Feature("Spendings")
+  @Story("SetTransfers")
   @Severity(SeverityLevel.NORMAL)
   @ParameterizedTest
   @MethodSource("TRANSFERS_DATA")
@@ -139,6 +150,8 @@ public class E2E_Test {
     assertTrue(spendingsScreen.isSpendingsScreenDisplayed());
   }
 
+  @Feature("Transactions")
+  @Story("TransactionsData")
   @Severity(SeverityLevel.NORMAL)
   @ParameterizedTest
   @MethodSource("TRANSACTIONS_DATA")
@@ -156,6 +169,8 @@ public class E2E_Test {
     transactionsDetails.closeTransactionsDetailsScreen();
   }
 
+  @Feature("Transactions")
+  @Story("TransactionsData")
   @Severity(SeverityLevel.NORMAL)
   @ParameterizedTest
   @MethodSource("SPENDINGS_DATE")
@@ -170,6 +185,8 @@ public class E2E_Test {
     assertTrue(Double.compare(transactionsDetails.getCurrentBalanceAmount(), 0.00) > 0);
   }
 
+  @Feature("Accounts")
+  @Story("AccountsData")
   @Severity(SeverityLevel.CRITICAL)
   @ParameterizedTest
   @MethodSource("ACCOUNTS_NAME")

@@ -37,10 +37,10 @@ public class AndroidScreensConstants extends DriverController {
 
   // Accounts screen
   public static final String ACCOUNTS_CLOSE_BUTTON = "accounts_button";
-  public static final String ACCOUNTS_LIST = "//*[@resource-id = 'com.monefy.app.lite:id/relativeLayoutManageCategoriesListItem']";
-  public static final String ACCOUNTS_ADD_BUTTON = ACCOUNTS_LIST + "//*[contains(@resource-id,'AddCategory')]/..";
-  public static final String ACCOUNTS_NAME_TEXT = ACCOUNTS_LIST + "//*[contains(@resource-id,'Name')]";
-  public static final String ACCOUNTS_AMOUNT_TEXT = ACCOUNTS_LIST + "//*[contains(@resource-id,'Amount')]";
+  public static final String ACCOUNTS_ADD_BUTTON = "//*[contains(@resource-id,'relativeLayoutManageCategoriesListItemType')]/*[contains(@resource-id,'AddCategory')]/..";
+  public static final String ACCOUNTS_LIST = "//*[contains(@resource-id,'relativeLayoutManageCategoriesListItem')]/*[contains(@resource-id,'imageViewCategoryImage')]/..";
+  public static final String ACCOUNTS_NAME_TEXT = ACCOUNTS_LIST + "//*[contains(@resource-id,'textViewName')]";
+  public static final String ACCOUNTS_AMOUNT_TEXT = ACCOUNTS_LIST + "//*[contains(@resource-id,'textViewAmount')]";
   public static final String ACCOUNTS_ACCOUNT_NAME_FIELD = "editTextCategoryName";
   public static final String ACCOUNTS_ACCOUNT_INITIALBALANCE_FIELD = "initialAmount";
   public static final String ACCOUNTS_ACCOUNT_CATEGORIES_CELLS = "//*[contains(@resource-id,'gridViewCategoryImages')]/android.widget.FrameLayout";

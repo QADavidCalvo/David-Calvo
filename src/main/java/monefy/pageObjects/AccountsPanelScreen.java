@@ -18,13 +18,18 @@ public class AccountsPanelScreen extends AndroidScreensConstants {
   }
 
   public void editAccount(String name) {
-    List<MobileElement> currentAccounts = getAccountsName();
-    Integer index = getIndexOfAccountByName(currentAccounts, name);
-    if (index >= 0) currentAccounts.get(index).click();
+    Integer index = getIndexOfAccountByName(getAccountsName(), name);
+    if (index >= 0) getAccountsList().get(index).click();
   }
 
   public boolean isAccountWithName(String name) {
     return getIndexOfAccountByName(getAccountsName(), name) >= 0;
+  }
+
+  public String getAccountName(String name) {
+    List<MobileElement> accountsName = getAccountsName();
+    Integer index = getIndexOfAccountByName(accountsName, name);
+    return (index >= 0) ? accountsName.get(index).getText() : null;
   }
 
   public String getAccountCurrentBalance(String name) {
@@ -33,12 +38,7 @@ public class AccountsPanelScreen extends AndroidScreensConstants {
   }
 
   public boolean isAccountWithBalance(String name) {
-    return getAccountCurrentBalance(name).equals("0,00 €") || getAccountCurrentBalance(name).equals("€ 0.00");
-  }
-
-  public void goToAccountWithName(String name) {
-    List<MobileElement> accounts = getAccountsName();
-    accounts.get(getIndexOfAccountByName(accounts, name)).click();
+    return !getAccountCurrentBalance(name).equals("0,00 €") && !getAccountCurrentBalance(name).equals("€ 0.00");
   }
 
   private int getIndexOfAccountByName(List<MobileElement> accounts, String name) {
@@ -46,6 +46,10 @@ public class AccountsPanelScreen extends AndroidScreensConstants {
       if (accounts.get(index).getText().toLowerCase().equals(name.toLowerCase())) return index;
     }
     return -1;
+  }
+
+  private List<MobileElement> getAccountsList() {
+    return driver.findElements(By.xpath(ACCOUNTS_LIST));
   }
 
   private List<MobileElement> getAccountsName() {

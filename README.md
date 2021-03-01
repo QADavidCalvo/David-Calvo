@@ -25,7 +25,7 @@ Please check the detailed information here: [Exploratory_Test.md](../master/src/
 ##### Test suite
 
 Following the exploratory charters done I decided to automate the most critical actions done during the exploration.
-- Add new account (medium priority - minor severity)
+- Add new account (medium priority - normal severity)
 - Add balance to account (high priority - normal severity)
 - Add new expense (critical priority - bloquer severity)
 - Add new income (critical priority - bloquer severity)
