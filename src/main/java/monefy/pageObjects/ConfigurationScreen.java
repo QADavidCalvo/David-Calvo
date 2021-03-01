@@ -15,7 +15,7 @@ public class ConfigurationScreen extends AndroidScreensConstants {
   }
 
   public boolean isConfigurationPanelDisplayed() {
-    return driver.findElements(By.id(CONFIGURATION_SETTINGS_BUTTON)).size() != 0;
+    return driver.findElements(By.id(CONFIGURATION_ACCOUNT_BUTTON)).size() != 0;
   }
 
   public void goToCategoriesList() {
@@ -25,7 +25,7 @@ public class ConfigurationScreen extends AndroidScreensConstants {
 
   public void goToAccountsList() {
     openConfigurationPanel();
-    driver.findElement(By.id(CONFIGURATION_ACCOUNT_BUTTON)).click();
+    if (driver.findElements(By.id(DATE_SETTINGS_PANEL)).size() == 0) driver.findElement(By.id(CONFIGURATION_ACCOUNT_BUTTON)).click();
   }
 
   public void goToCurrenciesList() {
