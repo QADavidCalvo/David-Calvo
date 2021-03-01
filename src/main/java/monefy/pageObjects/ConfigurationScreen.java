@@ -24,8 +24,10 @@ public class ConfigurationScreen extends AndroidScreensConstants {
   }
 
   public void goToAccountsList() {
-    openConfigurationPanel();
-    if (driver.findElements(By.id(DATE_SETTINGS_PANEL)).size() == 0) driver.findElement(By.id(CONFIGURATION_ACCOUNT_BUTTON)).click();
+    if (driver.findElements(By.xpath(ACCOUNTS_LIST)).size() == 0) {
+      openConfigurationPanel();
+      driver.findElement(By.id(CONFIGURATION_ACCOUNT_BUTTON)).click();
+    }
   }
 
   public void goToCurrenciesList() {
