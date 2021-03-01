@@ -8,6 +8,7 @@
 - [Test charter 4: Do some transfers](#test-charter-4-do-some-transfers)
 - [Test charter 5: Check balance details](#test-charter-5-check-balance-details)
 - [Test charter 6: Check accounts balance](#test-charter-6-check-accounts-balance)
+- [Test charter 7: Backup and restore data](#test-charter-7-backup-and-restore-data)
 - [Final observations](#final-observations)
 
 --------------------------------------------------------------------------
@@ -15,10 +16,10 @@
 ### Test suite information
 
 #### Objectives:
-- Goal: Set personal spendings to know how much money I have at the end of the month in my accounts.
+- Goal: Set personal spendings to know how much money I have at the end of the month in my accounts and check that all the data is stored properly.
 - Risks to mitigate: We want to check that user can manage the payment accounts, the spendings and the current balances, assuring that all the info can be set and calculated properly and no data is lost.
-- Test plan: First create a new bank account and add balance to all the accounts, then add expenses and incomes for the current month and do some transfers, check the monthly balance details and finally return to the app to check the current balance in all the accounts.
-- Out of scope: The tests are focused only in monthly spendings, so the other time interval spendings (daily, weekly, annual, etc.) are not checked.
+- Test plan: First create a new bank account and add balance to all the accounts, then add expenses, incomes and transfers for the current month, check the balance details and finally do a backup and restore the data.
+- Out of scope: The tests are focused only in monthly spendings, so don't spend time configuring other dates.
 
 #### Test:
 - Tester: David Calvo Pérez
@@ -51,7 +52,7 @@
 - Add balance to all accounts
 
 #### Test notes:
-- Once the app is opened there are no information about the current accounts shown in the screen, so I needed to find the access to the desired section. I found it after tap on the three vertical buttons at the topbar and after tapp on the accounts option. Once I accessed to the account info I tapped on the + icon to access to a screen where I could add a new account, setting the name "Cuenta bancaria", the initial balance "50.000,00€, and an image for that account. I set to start with that balance since 2021/01/01. After that tapped on the add account button on the header and then the new account appeared in the accounts list with the current balance. Because there were two preconfigured accounts, I added "500€" as initial balance for the cash and "2000€" for the payment card, both starting the first day of this month. Then in the main screen I saw all those amounts added as a green value in the middle of the screen.
+- Once the app is opened there are no information about the current accounts shown in the screen, so I needed to find the access to the desired section. I found it after tap on the three vertical dots button at the topbar and after tapp on the accounts option. Once I accessed to the account info I tapped on the + icon to access to a screen where I could add a new account, setting the name "Cuenta bancaria", the initial balance "50.000,00€, and an image for that account. I set to start with that balance since 2021/01/01. After that tapped on the add account button on the header and then the new account appeared in the accounts list with the current balance. Because there were two preconfigured accounts, I added "500€" as initial balance for the cash and "2000€" for the payment card, both starting the first day of this month. Then in the main screen I saw all those amounts added as a green value in the middle of the screen.
 
 --------------------------------------------------------------------------
 
@@ -63,7 +64,7 @@
 - Time-frame: 10 minutes
 
 #### Preconditions:
-- Have no expenses previously set
+- Have accounts set but no expenses previously added
 
 #### Exploration:
 - Filter spendings summary by dates
@@ -83,7 +84,7 @@
 - Time-frame: 10 minutes
 
 #### Preconditions:
-- Have no incomes previously set
+- Have accounts set but no incomes previously added
 
 #### Exploration:
 - Filter spendings summary by dates
@@ -103,7 +104,7 @@
 - Time-frame: 10 minutes
 
 #### Preconditions:
-- Have no transfers previously set
+- Have accounts set but no transfers previously added
 
 #### Exploration:
 - Filter spendings summary by dates
@@ -123,7 +124,7 @@
 - Time-frame: 10 minutes
 
 #### Preconditions:
-- Have expenses, incomes and transfers previously set
+- Have accounts, expenses, incomes and transfers previously set
 
 #### Exploration:
 - Filter spendings by month
@@ -140,7 +141,7 @@
 #### Information:
 - Priority: High
 - Requirements: Dates selector, Accounts current balances, Spendings summary
-- Time-frame: 10 minutes
+- Time-frame: 5 minutes
 
 #### Preconditions:
 - Have expenses, incomes and transfers previously set
@@ -150,7 +151,26 @@
 - Check current accounts balance
 
 #### Test notes:
-- Once I have added some monthly expenses and incomes and did some transfers, I was be able to check the accounts balance updated. First of all I filtered by all the accounts and by month, then I tapped on the three vertical buttons at the topbar and then I tapped on the accounts option. Then I saw the current balance of the three account I have configured (bank account, cash and payment card), I checked that the amount was correct, having into account the initial balance I set and all the spendings I was creating. I changed the dates filtering by date range, day, week, year, etc. to see that the information changed showing the correct amount for each dates.
+- Once I have added some monthly expenses and incomes and did some transfers, I was be able to check the accounts balance updated. First of all I filtered by all the accounts and by month, then I tapped on the three vertical dots button at the topbar and then I tapped on the accounts option. Then I saw the current balance of the three account I have configured (bank account, cash and payment card), I checked that the amount was correct, having into account the initial balance I set and all the spendings I was creating. I changed the dates filtering by date range, day, week, year, etc. to see that the information changed showing the correct amount for each dates.
+
+--------------------------------------------------------------------------
+
+### Test charter 7: Backup and restore data
+
+#### Information:
+- Priority: Critical
+- Requirements: Configuration, Data backup
+- Time-frame: 5 minutes
+
+#### Preconditions:
+- Have accounts, expenses, incomes and transfers previously set
+
+#### Exploration:
+- Check the backup and restore of the current data.
+- Check the deleting of the current local data.
+
+#### Test notes:
+- After have accounts, expenses, incomes and transfers set in the application is the moment to do a backup fo this data. To do that, I accessed to the right panel tapping on the three vertical dots button at the topbar and then I tapped on the "Settings" option. A new panel was displayed with some configurations and at the end there were the options to manage the backups of the data. First of all I tapped on the "Create data backup" button, then appeared a popup to allow permissions to store data in the device, and after agree it, a confirmation message appeared, I accepted and then a message was shown indicating that the current data was stored to "//com.monefy//monefy_backup_YYYY_MM_DD_hh_mm_ss", that file can be used to restore the data in another device, but to try the functionality, I just tapped on the "Clear data" button and saw that all the information in the app was deleted, so then I tapped on the "Restore data" button, I selected the most recent backup file from the list of backups done, and I applied it. A confirmation popup appeared warning me that all the data will be replaced, including the Google Drive or Dropbox data), finally after confirm the action and saw a message indicating that the current data was restored sucessfully. All the information set previously appeared again in the app.
 
 --------------------------------------------------------------------------
 
@@ -164,6 +184,6 @@ During the test I didn't detected any critical error but I saw some usability is
 
 3. There are sections not translated into Spanish like the Pro features section, some menus in the settings, etc., which give the application a bad image so I suggest fully translate the application in that language before adding it to the list of available languages.
 
-So the application is stable, works fine and it's usefull to manage the personal spendings.
+So the application is stable, stores and restores the data successfully, works fine and it's usefull to manage the personal spendings.
 
 --------------------------------------------------------------------------
