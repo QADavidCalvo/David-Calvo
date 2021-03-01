@@ -49,5 +49,4 @@ public class DriverController {
     androidCapabilities.setCapability(NEW_COMMAND_TIMEOUT, 300000);
     return androidCapabilities;
   }
-
 }

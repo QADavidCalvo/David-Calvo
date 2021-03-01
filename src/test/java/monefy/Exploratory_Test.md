@@ -1,15 +1,30 @@
 ## Exploratory test
 
+#### Table of Contents
+- [Test suite information](#test-suite-information)
+- [Test 1: Set up accounts](#Test-1:-Set-up-accounts)
+- [Test 2: Add monthly expenses](#Test-2:-Add-monthly-expenses)
+- [Test 3: Add monthly incomes](#Test-3:-Add monthly-incomes)
+- [Test 4: Do some transfers](#Test-4:-Do-some-transfers)
+- [Test 5: Check balance details](#Test-5:-Check-balance-details)
+- [Test 6: Check current balances](#Test-6:-Check-current-balances)
+- [Final observations:](#Final-observations:)
+
 --------------------------------------------------------------------------
 
-### Test suite
+### Test suite information
+
 #### Objectives:
 - Goal: Set personal spendings to know how much money I have at the end of the month in my accounts.
 - Risks to mitigate: We want to check that user can manage the payment accounts, the spendings and the current balances, assuring that all the info can be set and calculated properly and no data is lost.
 - Test plan: First create a new bank account and add balance to all the accounts, then add expenses and incomes for the current month and do some transfers, check the monthly balance details and finally return to the app to check the current balance in all the accounts.
 - Out of scope: The tests are focused only in monthly spendings, so the other time interval spendings (daily, weekly, annual, etc.) are not checked.
-- Tests types: Time-framed exploratory test charters
-- Total test timebox: 1 hour
+
+#### Test:
+- Tester: David Calvo Pérez
+- Test date: 2021/02/27 10:00
+- Tests type: Time-framed exploratory test charters
+- Total duration: 1 hour
 
 #### Set up:
 - Test app: Monefy Lite v1.9.19.1177 (Store version)
@@ -22,8 +37,9 @@
 --------------------------------------------------------------------------
 
 ### Test 1: Set up accounts
+
 #### Information:
-- Priority: Critical
+- Priority: High
 - Requirements: Add accounts, Edit accounts
 - Time-frame: 10m
 
@@ -34,8 +50,13 @@
 - Create new account
 - Add balance to all accounts
 
+#### Test notes:
+- 
+
+--------------------------------------------------------------------------
 
 ### Test 2: Add monthly expenses
+
 #### Information:
 - Priority: Critical
 - Requirements: Dates selector, Expenses, Spendings summary
@@ -49,11 +70,15 @@
 - Add some different expenses
 - Check monthly expenses in the spendings summary
 
+#### Test notes:
+- 
+
 --------------------------------------------------------------------------
 
 ### Test 3: Add monthly incomes
+
 #### Information:
-- Priority: High
+- Priority: Critical
 - Requirements: Dates selector, Incomes, Spendings summary
 - Time-frame: 10m
 
@@ -65,11 +90,15 @@
 - Add some different incomes
 - Check monthly incomes in the spendings summary
 
+#### Test notes:
+- 
+
 --------------------------------------------------------------------------
 
 ### Test 4: Do some transfers
+
 #### Information:
-- Priority: High
+- Priority: Critical
 - Requirements: Dates selector, Transfers, Spendings summary
 - Time-frame: 10m
 
@@ -81,11 +110,15 @@
 - Do some transfers to cash and payment card
 - Check the transfers in the spendings summary
 
+#### Test notes:
+- 
+
 --------------------------------------------------------------------------
 
 ### Test 5: Check balance details
+
 #### Information:
-- Priority: Critical
+- Priority: Medium
 - Requirements: Dates selector, Current balance details, Spendings summary
 - Time-frame: 10m
 
@@ -98,11 +131,15 @@
 - Add expenses
 - Check 
 
+#### Test notes:
+- 
+
 --------------------------------------------------------------------------
 
 ### Test 6: Check current balances
+
 #### Information:
-- Priority: Critical
+- Priority: High
 - Requirements: Dates selector, Accounts current balances, Spendings summary
 - Time-frame: 10m
 
@@ -115,10 +152,15 @@
 - Add expenses
 - Check 
 
+#### Test notes:
+- 
+
 --------------------------------------------------------------------------
 
 ### Final observations:
+
 During the test I didn't detected any critical error but I saw some usability issues:
+
 1. In some cases the user experience is not clear like when adding a new transfer that the user should need to select the origin and the destiny accounts before add the amount and apply the transfer because there keyboard overlaps those selectors (needing in this case to tap the device's physical back button to close it). So here can be better to have a wizard explaining the steps to do the actions or even having all the fields always shown on the screen.
 
 2. There are Pro features that are not indicated to the user on the screen (like adding a category, add a new currency, etc.), so the user is adviced suddenly just when she tries to do the action and it's frustrating. Those features are indicated in the "About" section but it's not easy to find, so in this case should be better to put a "Pro" label for instance on the actions that needs to have a Pro version.

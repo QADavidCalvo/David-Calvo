@@ -1,5 +1,7 @@
 package monefy;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
@@ -7,7 +9,6 @@ import java.util.stream.Stream;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -18,12 +19,13 @@ import monefy.driver.DriverController;
 import monefy.pageObjects.AccountsEditionScreen;
 import monefy.pageObjects.AccountsPanelScreen;
 import monefy.pageObjects.ConfigurationScreen;
-import monefy.pageObjects.CurrentBalanceScreen;
-import monefy.pageObjects.DrawerScreen;
+import monefy.pageObjects.DateSettingsScreen;
+import monefy.pageObjects.DateSettingsScreen.Period;
 import monefy.pageObjects.ExpensesAndIncomesScreen;
 import monefy.pageObjects.NewTransferScreen;
-import monefy.pageObjects.SummaryScreen;
-import monefy.pageObjects.ToolbarScreen;
+import monefy.pageObjects.SpendingsScreen;
+import monefy.pageObjects.TransactionsDetailsScreen;
+import monefy.pageObjects.TransactionsDetailsScreen.TransactionsSorting;
 
 public class E2E_Test {
 
@@ -34,17 +36,15 @@ public class E2E_Test {
 
   @AfterAll
   public static void tearDown() {
-    // AllureReport.generateReport();
     DriverController.stopDriver();
   }
 
-  DrawerScreen drawer = new DrawerScreen();
-  ToolbarScreen toolbar = new ToolbarScreen();
+  DateSettingsScreen dateSettingsScreen = new DateSettingsScreen();
   ConfigurationScreen configurationScreen = new ConfigurationScreen();
   AccountsPanelScreen accountsPanelScreen = new AccountsPanelScreen();
   AccountsEditionScreen accountsEditionScreen = new AccountsEditionScreen();
-  SummaryScreen summaryScreen = new SummaryScreen();
-  CurrentBalanceScreen currentBalanceScreen = new CurrentBalanceScreen();
+  SpendingsScreen spendingsScreen = new SpendingsScreen();
+  TransactionsDetailsScreen transactionsDetails = new TransactionsDetailsScreen();
   ExpensesAndIncomesScreen expensesAndIncomesScreen = new ExpensesAndIncomesScreen();
   NewTransferScreen newTransferScreen = new NewTransferScreen();
 
@@ -53,8 +53,7 @@ public class E2E_Test {
   @MethodSource("ADD_NEW_ACCOUNT")
   public void monefy_01_addNewAccount_isNewAccountSet(String accountName, String accountBalance, int accountImage) {
     // Given
-    toolbar.pressConfigurationButton();
-    configurationScreen.pressAccountsButton();
+    configurationScreen.goToAccountsList();
 
     // When
     accountsPanelScreen.pressAddAccountButton();
@@ -64,7 +63,7 @@ public class E2E_Test {
     accountsEditionScreen.saveAccountSettings();
 
     // Then
-    accountsPanelScreen.isAccountWithName(accountName);
+    assertTrue(accountsPanelScreen.isAccountWithName(accountName));
   }
 
   @Severity(SeverityLevel.NORMAL)
@@ -72,8 +71,7 @@ public class E2E_Test {
   @MethodSource("ADD_ACCOUNT_BALANCE")
   public void monefy_02_addBalanceToAccount_isAccountWithBalanceSet(String accountName, String accountBalance) {
     // Given
-    toolbar.pressConfigurationButton();
-    configurationScreen.pressAccountsButton();
+    configurationScreen.goToAccountsList();
 
     // When
     accountsPanelScreen.editAccount(accountName);
@@ -81,55 +79,54 @@ public class E2E_Test {
     accountsEditionScreen.closeAccountSettings();
 
     // And
-    toolbar.pressConfigurationButton();
-    configurationScreen.pressAccountsButton();
+    configurationScreen.goToAccountsList();
 
     // Then
-    accountsPanelScreen.isAccountWithBalance(accountName);
+    assertTrue(accountsPanelScreen.isAccountWithBalance(accountName));
   }
 
   @Severity(SeverityLevel.BLOCKER)
   @ParameterizedTest
   @MethodSource("EXPENSES_DATA")
-  public void monefy_01_addNewExpense_isExpensesUpdatedInSummaryScreen(String note, String account, String amount, String category) {
+  public void monefy_03_addNewExpense_isExpensesUpdatedInSpendingsScreen(String note, String account, String amount, String category) {
     // Given
-    Double currentExpensesAmount = summaryScreen.getTotalExpensesAmount();
+    Double initialExpensesAmount = spendingsScreen.getTotalExpensesAmount();
 
     // When
-    summaryScreen.pressAddExpensesButton();
+    expensesAndIncomesScreen.goToAddExpensesScreen();
     expensesAndIncomesScreen.addNote(note);
     expensesAndIncomesScreen.selectAccount(account);
     expensesAndIncomesScreen.setAmount(amount);
     expensesAndIncomesScreen.chooseCategory(category);
 
     // Then
-    assertTrue(Double.compare(summaryScreen.getTotalExpensesAmount(), 0.00) > currentExpensesAmount);
+    assertTrue(Double.compare(spendingsScreen.getTotalExpensesAmount(), initialExpensesAmount) > 0);
   }
 
   @Severity(SeverityLevel.BLOCKER)
   @ParameterizedTest
   @MethodSource("INCOMES_DATA")
-  public void monefy_02_addNewIncome_isIncomesUpdatedInSummaryScreen(String note, String account, String amount, String category) {
+  public void monefy_04_addNewIncome_isIncomesUpdatedInSpendingsScreen(String note, String account, String amount, String category) {
     // Given
-    Double currentIncomesAmount = summaryScreen.getTotalIncomesAmount();
+    Double initialIncomesAmount = spendingsScreen.getTotalIncomesAmount();
 
     // When
-    summaryScreen.pressAddIncomesButton();
+    expensesAndIncomesScreen.goToAddIncomesScreen();
     expensesAndIncomesScreen.addNote(note);
     expensesAndIncomesScreen.selectAccount(account);
     expensesAndIncomesScreen.setAmount(amount);
     expensesAndIncomesScreen.chooseCategory(category);
 
     // Then
-    assertTrue(Double.compare(summaryScreen.getTotalIncomesAmount(), 0.00) > currentIncomesAmount);
+    assertTrue(Double.compare(spendingsScreen.getTotalIncomesAmount(), initialIncomesAmount) > 0);
   }
 
   @Severity(SeverityLevel.NORMAL)
   @ParameterizedTest
   @MethodSource("TRANSFERS_DATA")
-  public void monefy_03_doNewTransfer_isTransfersUpdatedInSummaryScreen(String note, String accountOrigin, String accountDestiny, String amount) {
+  public void monefy_05_doNewTransfer_isTransfersUpdatedInSpendingsScreen(String note, String accountOrigin, String accountDestiny, String amount) {
     // Given
-    toolbar.pressNewTransferButton();
+    newTransferScreen.goToNewTransferScreen();
 
     // When
     newTransferScreen.addNote(note);
@@ -139,52 +136,85 @@ public class E2E_Test {
     newTransferScreen.addTransfer();
 
     // Then
-    assertTrue(summaryScreen.isSummaryScreenDisplayed());
+    assertTrue(spendingsScreen.isSpendingsScreenDisplayed());
   }
 
   @Severity(SeverityLevel.NORMAL)
-  @Test
-  public void monefy_04_checkCurrentBalance_isCurrentBalanceDetailsDisplayed() {
+  @ParameterizedTest
+  @MethodSource("TRANSACTIONS_DATA")
+  public void monefy_06_filterTransactionsByDate_isTransactionsDetailsDisplayed(Period date, TransactionsSorting transactionsSorting) {
     // Given
+    dateSettingsScreen.openDateSettingsPanel();
+    dateSettingsScreen.filterBy(date);
 
     // When
+    transactionsDetails.goToTransactionsDetailsScreen();
+    transactionsDetails.sortBy(transactionsSorting);
 
     // Then
+    assertTrue(transactionsDetails.isTransactionAmountsDisplayed(transactionsSorting));
+    transactionsDetails.closeTransactionsDetailsScreen();
+  }
+
+  @Severity(SeverityLevel.NORMAL)
+  @ParameterizedTest
+  @MethodSource("SPENDINGS_DATE")
+  public void monefy_07_filterSpendingsByDate_isCurrentBalanceGreaterThanZero(Period date) {
+    // Given
+    dateSettingsScreen.openDateSettingsPanel();
+
+    // When
+    dateSettingsScreen.filterBy(date);
+
+    // Then
+    assertTrue(Double.compare(transactionsDetails.getCurrentBalanceAmount(), 0.00) > 0);
   }
 
   @Severity(SeverityLevel.CRITICAL)
-  @Test
-  public void monefy_05_checkAccountsBalance_isCashAndPaymentCardBalancesDisplayed() {
+  @ParameterizedTest
+  @MethodSource("ACCOUNTS_NAME")
+  public void monefy_08_goToAccountsPanel_isAccountWithTotalBalanceDisplayed(String accountName) {
     // Given
+    configurationScreen.openConfigurationPanel();
 
     // When
+    configurationScreen.goToAccountsList();
 
     // Then
+    assertAll(() -> assertTrue(accountsPanelScreen.isAccountWithName(accountName)), () -> assertNotNull(accountsPanelScreen.getAccountCurrentBalance(accountName)));
+    configurationScreen.closeConfigurationPanel();
   }
 
   private static Stream<Arguments> ADD_NEW_ACCOUNT() {
-    return Arrays.stream(new Arguments[] {Arguments.of("Banco", "50000", 1)
-    });
+    return Arrays.stream(new Arguments[] {Arguments.of("Banco", "50000", 1)});
   }
 
   private static Stream<Arguments> ADD_ACCOUNT_BALANCE() {
-    return Arrays.stream(new Arguments[] {Arguments.of("Efectivo", "500"), Arguments.of("Tarjeta de pago", "2000")
-    });
+    return Arrays.stream(new Arguments[] {Arguments.of("Efectivo", "500"), Arguments.of("Tarjeta de pago", "2000")});
   }
 
   private static Stream<Arguments> EXPENSES_DATA() {
-    return Arrays.stream(new Arguments[] {Arguments.of("Alquiler del piso", "Tarjeta de pago", "750", "Casa")
-    });
+    return Arrays.stream(new Arguments[] {Arguments.of("Alquiler del piso", "Tarjeta de pago", "750", "Casa")});
   }
 
   private static Stream<Arguments> INCOMES_DATA() {
-    return Arrays.stream(new Arguments[] {Arguments.of("Vacaciones de verano", "Efectivo", "50", "Ahorros")
-    });
+    return Arrays.stream(new Arguments[] {Arguments.of("Vacaciones de verano", "Efectivo", "50", "Ahorros")});
   }
 
   private static Stream<Arguments> TRANSFERS_DATA() {
-    return Arrays.stream(new Arguments[] {Arguments.of("Compra de comida", "Tarjeta de pago", "Efectivo", "20")
-    });
+    return Arrays.stream(new Arguments[] {Arguments.of("Compra de comida", "Tarjeta de pago", "Efectivo", "20")});
+  }
+
+  private static Stream<Arguments> TRANSACTIONS_DATA() {
+    return Arrays.stream(new Arguments[] {Arguments.of(Period.MONTH, TransactionsSorting.DATE), Arguments.of(Period.MONTH, TransactionsSorting.CATEGORY)});
+  }
+
+  private static Stream<Period> SPENDINGS_DATE() {
+    return Stream.of(Period.DAY, Period.MONTH, Period.YEAR);
+  }
+
+  private static Stream<String> ACCOUNTS_NAME() {
+    return Stream.of("Efectivo", "Tarjeta de pago");
   }
 
 }

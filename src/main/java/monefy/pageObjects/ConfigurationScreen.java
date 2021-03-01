@@ -3,23 +3,38 @@ package monefy.pageObjects;
 import org.openqa.selenium.By;
 
 import monefy.constants.AndroidScreensConstants;
-import monefy.driver.DriverController;
 
-public class ConfigurationScreen extends DriverController {
+public class ConfigurationScreen extends AndroidScreensConstants {
 
-  public void pressCategoriesButton() {
-    driver.findElement(By.id(AndroidScreensConstants.CONFIGURATION_CATEGORIES_BUTTON)).click();
+  public void openConfigurationPanel() {
+    if (!isConfigurationPanelDisplayed()) driver.findElement(By.xpath(TOOLBAR_CONFIGURATION_BUTTON)).click();
   }
 
-  public void pressAccountsButton() {
-    driver.findElement(By.id(AndroidScreensConstants.CONFIGURATION_ACCOUNT_BUTTON)).click();
+  public void closeConfigurationPanel() {
+    if (isConfigurationPanelDisplayed()) driver.findElement(By.xpath(TOOLBAR_CONFIGURATION_BUTTON)).click();
   }
 
-  public void pressCurrenciesButton() {
-    driver.findElement(By.id(AndroidScreensConstants.CONFIGURATION_CURRENCIES_BUTTON)).click();
+  public boolean isConfigurationPanelDisplayed() {
+    return driver.findElements(By.id(CONFIGURATION_SETTINGS_BUTTON)).size() != 0;
   }
 
-  public void pressSettingsButton() {
-    driver.findElement(By.id(AndroidScreensConstants.CONFIGURATION_SETTINGS_BUTTON)).click();
+  public void goToCategoriesList() {
+    openConfigurationPanel();
+    driver.findElement(By.id(CONFIGURATION_CATEGORIES_BUTTON)).click();
+  }
+
+  public void goToAccountsList() {
+    openConfigurationPanel();
+    driver.findElement(By.id(CONFIGURATION_ACCOUNT_BUTTON)).click();
+  }
+
+  public void goToCurrenciesList() {
+    openConfigurationPanel();
+    driver.findElement(By.id(CONFIGURATION_CURRENCIES_BUTTON)).click();
+  }
+
+  public void goToConfigurationScreen() {
+    openConfigurationPanel();
+    driver.findElement(By.id(CONFIGURATION_SETTINGS_BUTTON)).click();
   }
 }

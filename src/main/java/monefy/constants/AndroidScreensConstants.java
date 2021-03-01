@@ -1,6 +1,8 @@
 package monefy.constants;
 
-public class AndroidScreensConstants {
+import monefy.driver.DriverController;
+
+public class AndroidScreensConstants extends DriverController {
 
   // Toolbar
   public static final String TOOLBAR_CONTAINER = "//android.view.ViewGroup[contains(@resource-id,'toolbar')]";
@@ -8,6 +10,24 @@ public class AndroidScreensConstants {
   public static final String TOOLBAR_SEARCH_BUTTON = TOOLBAR_CONTAINER + "//*[contains(@resource-id,'menu_search')]";
   public static final String TOOLBAR_TRANSFER_BUTTON = TOOLBAR_CONTAINER + "//*[contains(@resource-id,'transfer_menu_item')]";
   public static final String TOOLBAR_CONFIGURATION_BUTTON = TOOLBAR_CONTAINER + "//*[contains(@resource-id,'overflow')]";
+
+  // Date settings screen
+  public static final String DATE_SETTINGS_PANEL = "left_drawer";
+  public static final String DATE_SETTINGS_ACCOUNT_SELECTOR = "left_drawer";
+  public static final String DATE_SETTINGS_ACCOUNTS_LIST_OPTION = "//android.widget.ListView/android.widget.LinearLayout";
+  public static final String DATE_SETTINGS_ACCOUNTS_LIST_TITLE = DATE_SETTINGS_ACCOUNTS_LIST_OPTION + "//*[contains(@resource-id,'title')]";
+  public static final String DATE_SETTINGS_PERIOD_DAY_OPTION = "day_period_button";
+  public static final String DATE_SETTINGS_PERIOD_WEEK_OPTION = "week_period_button";
+  public static final String DATE_SETTINGS_PERIOD_MONTH_OPTION = "month_period_button";
+  public static final String DATE_SETTINGS_PERIOD_YEAR_OPTION = "year_period_button";
+  public static final String DATE_SETTINGS_PERIOD_ALL_OPTION = "all_period_button";
+  public static final String DATE_SETTINGS_PERIOD_INTERVAL_OPTION = "custom_period_button";
+  public static final String DATE_SETTINGS_PERIOD_DATE_OPTION = "show_datepicker_button";
+
+  // Search screen
+  public static final String SEARCH_BACK_BUTTON = "action_back";
+  public static final String SEARCH_TEXT_FIELD = "et_search";
+  public static final String SEARCH_VOICE_BUTTON = "action_voice";
 
   // Configuration screen
   public static final String CONFIGURATION_CATEGORIES_BUTTON = "categories_panel";
@@ -17,7 +37,7 @@ public class AndroidScreensConstants {
 
   // Accounts screen
   public static final String ACCOUNTS_CLOSE_BUTTON = "accounts_button";
-  public static final String ACCOUNTS_LIST = "//*[contains(@resource-id,'accounts_list')]";
+  public static final String ACCOUNTS_LIST = "//*[@resource-id = 'com.monefy.app.lite:id/relativeLayoutManageCategoriesListItem']";
   public static final String ACCOUNTS_ADD_BUTTON = ACCOUNTS_LIST + "//*[contains(@resource-id,'AddCategory')]/..";
   public static final String ACCOUNTS_NAME_TEXT = ACCOUNTS_LIST + "//*[contains(@resource-id,'Name')]";
   public static final String ACCOUNTS_AMOUNT_TEXT = ACCOUNTS_LIST + "//*[contains(@resource-id,'Amount')]";
@@ -45,6 +65,14 @@ public class AndroidScreensConstants {
   public static final String EXPENSESANDINCOMES_NOTE_TEXT_FIELD = "textViewNote";
   public static final String EXPENSESANDINCOMES_CATEGORIES_CELLS = "//*[contains(@resource-id,'gridViewCategories')]/android.widget.FrameLayout";
   public static final String EXPENSESANDINCOMES_CATEGORIES_NAME = "textCategoryName";
+
+  // Balance screen
+  public static final String BALANCE_SORTING_BUTTON = "buttonChooseListSortingMode";
+  public static final String BALANCE_TRANSACTION_DATE = "textViewDate";
+  public static final String BALANCE_TRANSACTION_COUNT_VALUE = "textViewTransactionsCount";
+  public static final String BALANCE_TRANSACTION_CATEGORY_NAME = "textViewCategoryName";
+  public static final String BALANCE_TRANSACTION_AMOUNT_VALUE = "textViewTransactionAmount";
+  public static final String BALANCE_TRANSACTION_WHOLEAMOUNT_VALUE = "textViewWholeAmount";
 
   // New transfer screen
   public static final String TRANSFER_AMOUNT_TEXT_FIELD = "amount_text";

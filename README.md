@@ -30,7 +30,8 @@ Following the exploratory charters done I decided to automate the most critical 
 - Add new expense (critical priority - bloquer severity)
 - Add new income (critical priority - bloquer severity)
 - Do new transfer (critical priority - critical severity)
-- Check balance details (high priority - normal severity)
+- Check transfers details (high priority - normal severity)
+- Check balance by date (medium priority - normal severity)
 - Check current accounts balance (high priority - normal severity)
 
 Those scenarios are End to End tests but they are slow and hard to mantain so they are expensive.
@@ -68,16 +69,16 @@ The tests results are generated with Maven Surefire Report and used to generate 
 │   │   │   │   │   ├── driver
 │   │   │   │   │   │   ├── DriverController
 │   │   │   │   │   ├── pageObjects
+│   │   │   │   │   │   ├── AccountsEditionScreen
+│   │   │   │   │   │   ├── AccountsPanelScreen
 │   │   │   │   │   │   ├── AmountKeyboardScreen
-│   │   │   │   │   │   ├── CurrentBalanceScreen
-│   │   │   │   │   │   ├── DrawerScreen
+│   │   │   │   │   │   ├── ConfigurationScreen
+│   │   │   │   │   │   ├── DateSettingsScreen
 │   │   │   │   │   │   ├── ExpensesAndIncomesScreen
 │   │   │   │   │   │   ├── NewTransferScreen
-│   │   │   │   │   │   ├── OptionsScreen
-│   │   │   │   │   │   ├── SummaryScreen
-│   │   │   │   │   │   ├── ToolbarScreen
-│   │   │   │   │   ├── reports
-│   │   │   │   │   │   ├── AllureReport
+│   │   │   │   │   │   ├── SearchScreen
+│   │   │   │   │   │   ├── SpendingsScreen
+│   │   │   │   │   │   ├── TransactionsDetailsScreen
 │   │   ├── test
 │   │   │   ├── java
 │   │   │   │   ├── monefy

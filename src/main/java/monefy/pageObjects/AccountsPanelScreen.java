@@ -1,24 +1,20 @@
 package monefy.pageObjects;
 
-import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.List;
-import java.util.Locale;
 
 import org.openqa.selenium.By;
 
 import io.appium.java_client.MobileElement;
 import monefy.constants.AndroidScreensConstants;
-import monefy.driver.DriverController;
 
-public class AccountsPanelScreen extends DriverController {
+public class AccountsPanelScreen extends AndroidScreensConstants {
 
   public void closeAccountsPanel() {
-    driver.findElement(By.id(AndroidScreensConstants.ACCOUNTS_CLOSE_BUTTON)).click();
+    driver.findElement(By.id(ACCOUNTS_CLOSE_BUTTON)).click();
   }
 
   public void pressAddAccountButton() {
-    driver.findElement(By.xpath(AndroidScreensConstants.ACCOUNTS_ADD_BUTTON)).click();
+    driver.findElement(By.xpath(ACCOUNTS_ADD_BUTTON)).click();
   }
 
   public void editAccount(String name) {
@@ -31,16 +27,13 @@ public class AccountsPanelScreen extends DriverController {
     return getIndexOfAccountByName(getAccountsName(), name) >= 0;
   }
 
+  public String getAccountCurrentBalance(String name) {
+    Integer index = getIndexOfAccountByName(getAccountsName(), name);
+    return (index >= 0) ? getAccountsBalance().get(index).getText() : null;
+  }
+
   public boolean isAccountWithBalance(String name) {
-    try {
-      Integer index = getIndexOfAccountByName(getAccountsName(), name);
-      if (index >= 0) {
-        String accountBalanceText = getAccountsBalance().get(index).getText().replaceAll("€", "");
-        Double accountBalanceValue = NumberFormat.getInstance(Locale.ENGLISH).parse(accountBalanceText).doubleValue();
-        return Double.compare(accountBalanceValue, Double.valueOf(0.0)) > 0;
-      }
-    } catch (ParseException e) {}
-    return false;
+    return getAccountCurrentBalance(name).equals("0,00 €") || getAccountCurrentBalance(name).equals("€ 0.00");
   }
 
   public void goToAccountWithName(String name) {
@@ -56,11 +49,11 @@ public class AccountsPanelScreen extends DriverController {
   }
 
   private List<MobileElement> getAccountsName() {
-    return driver.findElements(By.xpath(AndroidScreensConstants.ACCOUNTS_NAME_TEXT));
+    return driver.findElements(By.xpath(ACCOUNTS_NAME_TEXT));
   }
 
   private List<MobileElement> getAccountsBalance() {
-    return driver.findElements(By.xpath(AndroidScreensConstants.ACCOUNTS_AMOUNT_TEXT));
+    return driver.findElements(By.xpath(ACCOUNTS_AMOUNT_TEXT));
   }
 
 
