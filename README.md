@@ -54,7 +54,6 @@ It is a maven project which easily manages the libraries and dependencies necess
 All the tests run under Java 15 and jUnit 5 with which it's possible to launch the same scenario with different data provided.
 
 The tests results are generated with Maven Surefire Report, stored in the "allure-results" folder and used to generate an Allure report with more usable info (in a big project this reports can have screenshots, logs, tests suite information, etc.)
-This report is already generated with the real executions, you can download it from the "allure-report" folder and then open it using the command "allure open "{path_of_the_report_files}""
 
 
 ##### Project structure
@@ -152,8 +151,17 @@ To launch tests in your local machine do these steps:
 
 ##### Test results
 
-[Allure report]
+After run all the test cases with all the defined scenarios, I generated the Allure report to have the information of the results:
 
+![TestsResultsOverview](https://user-images.githubusercontent.com/17761949/109486526-4745e700-7a83-11eb-8185-d145c7e3c41b.jpg)
+
+![TestsResultsPackages](https://user-images.githubusercontent.com/17761949/109486527-4745e700-7a83-11eb-9eed-bd01176e8ed1.jpg)
+
+![TestsResultsGraphs](https://user-images.githubusercontent.com/17761949/109486524-46ad5080-7a83-11eb-8c7b-d7b8937c81d8.jpg)
+
+![TestsResultsBehaviours](https://user-images.githubusercontent.com/17761949/109486523-4614ba00-7a83-11eb-935f-f7d10bc317c2.jpg)
+
+Note: you can download this report from the "allure-report" folder and then open it using the command "allure open '{path_of_the_report_files}'"
 
 -------------------------------------------------------------------------------------------------
 
